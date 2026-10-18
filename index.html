@@ -21,6 +21,7 @@
     <div class="wrap">
       <a class="brand" href="./"><img src="icons/icon-192.png" alt="" width="30" height="30">MoDooDa Agent</a>
       <span class="spacer"></span>
+      <a class="btn small" href="#downloads">Downloads</a>
       <a class="btn primary small" href="app/">Open MoDooDa</a>
     </div>
   </header>
@@ -32,7 +33,7 @@
       <p class="lead">MoDooDa has Claude and ChatGPT work on your task together. Each writes its own answer, reviews the other’s, and the best parts are combined into one final answer, with disagreements shown instead of hidden.</p>
       <div class="row">
         <a class="btn primary" href="app/">Open MoDooDa in your browser</a>
-        <a class="btn" href="#phone">Install on your phone</a>
+        <a class="btn" href="#downloads">Downloads</a>
       </div>
       <p class="small muted">Free. No account. Nothing you type is uploaded by MoDooDa.</p>
       </div>
@@ -57,27 +58,73 @@
       <p class="small muted">Prefer something shorter? The Quick workflow does drafts, one review each, and the combined answer.</p>
     </section>
 
-    <section aria-labelledby="ways-h">
-      <h2 id="ways-h">Ways to use MoDooDa</h2>
-      <div class="options">
-        <div class="card option">
-          <h3>In your browser</h3>
-          <p class="grow">Manual mode: MoDooDa writes each prompt, and you copy it into ChatGPT or Claude and paste the reply back. Works with free or paid accounts.</p>
-          <a class="btn primary" href="app/">Open MoDooDa</a>
-        </div>
-        <div class="card option" id="phone">
-          <h3>On your phone</h3>
-          <div class="grow">
-            <p><strong>iPhone / iPad:</strong> open this page in Safari, tap <em>Share</em>, then <em>Add to Home Screen</em>.</p>
-            <p><strong>Android:</strong> open in Chrome, tap <em>⋮</em>, then <em>Install app</em> or <em>Add to Home screen</em>.</p>
-            <p class="small muted">The phone app uses manual mode. After the first visit it also opens offline.</p>
-          </div>
-        </div>
-        <div class="card option">
-          <h3>Desktop app</h3>
-          <p class="grow">For people with a Claude or ChatGPT subscription: the desktop app will run the steps automatically through the official command-line tools, where the providers permit it. <strong>Not released yet.</strong> There is no download link until a tested installer exists.</p>
-          <span class="badge info">In development</span>
-        </div>
+    <section id="downloads" aria-labelledby="dl-h">
+      <h2 id="dl-h">Downloads</h2>
+      <p class="muted" id="dl-version">No release has been published yet.</p>
+
+      <h3 class="dl-group">Desktop apps <span class="badge info">Native installer</span></h3>
+      <p class="small muted">A program you download and install on your computer. On a computer with Claude Code and a Claude plan, it can run Claude's steps for you automatically.</p>
+      <div class="dl-grid">
+        <article class="card dl-card" data-dl="mac" aria-labelledby="dl-mac-h">
+          <h4 id="dl-mac-h">Mac</h4>
+          <p class="small">One app for <strong>Intel and Apple silicon (M1–M4)</strong> Macs.</p>
+          <ul class="small dl-req">
+            <li>macOS 13 Ventura or later</li>
+            <li>4 GB RAM; under 50 MB of disk space</li>
+            <li>Optional, for automatic Claude steps: Claude Code with a Claude Pro, Max, Team or Enterprise plan</li>
+          </ul>
+          <div class="dl-action"><span class="badge warn">Coming soon</span></div>
+          <details class="small"><summary>How to install</summary>
+            <ol class="howto">
+              <li>Open the downloaded <code>.dmg</code> file and drag <strong>MoDooDa Agent</strong> into <strong>Applications</strong>.</li>
+              <li>The first time only: <strong>right-click (or Control-click) the app → Open → Open</strong>. On macOS 15 or later, try to open it once, then go to <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>.</li>
+              <li>This beta is not yet signed by Apple, which is why that one-time step is needed. It only allows this app. Never turn off Mac security in general.</li>
+            </ol>
+          </details>
+        </article>
+        <article class="card dl-card" data-dl="windows" aria-labelledby="dl-win-h">
+          <h4 id="dl-win-h">Windows</h4>
+          <p class="small">For 64-bit PCs (x64).</p>
+          <ul class="small dl-req">
+            <li>Windows 10 (version 1809 or later) or Windows 11</li>
+            <li>4 GB RAM; internet the first time (to add Microsoft's WebView2 if it's missing)</li>
+            <li>Optional, for automatic Claude steps: Claude Code with a Claude Pro, Max, Team or Enterprise plan</li>
+          </ul>
+          <div class="dl-action"><span class="badge warn">Coming soon</span></div>
+          <details class="small"><summary>How to install</summary>
+            <ol class="howto">
+              <li>Run the downloaded <code>setup.exe</code> and follow the steps.</li>
+              <li>If Windows shows “Windows protected your PC”, click <strong>More info → Run anyway</strong>. This beta is not yet code-signed. Never turn off Windows security in general.</li>
+            </ol>
+          </details>
+        </article>
+      </div>
+
+      <h3 class="dl-group">Phones</h3>
+      <div class="dl-grid">
+        <article class="card dl-card" data-dl="android" aria-labelledby="dl-and-h">
+          <h4 id="dl-and-h">Android</h4>
+          <p class="small"><strong>Native app:</strong></p>
+          <div class="dl-action"><span class="badge warn">Coming soon</span></div>
+          <p class="small"><strong>Use now: the web app</strong> <span class="badge info">Installable website</span><br>Open <a href="app/">MoDooDa</a> in Chrome, tap <strong>⋮</strong>, then <strong>Install app</strong> or <strong>Add to Home screen</strong>. It works offline after the first visit and uses copy-and-paste mode.</p>
+        </article>
+        <article class="card dl-card" data-dl="ios" aria-labelledby="dl-ios-h">
+          <h4 id="dl-ios-h">iPhone and iPad</h4>
+          <p class="small"><strong>Native app:</strong></p>
+          <div class="dl-action"><span class="badge warn">Coming soon</span></div>
+          <p class="small"><strong>Use now: the web app</strong> <span class="badge info">Installable website</span><br>Open <a href="app/">MoDooDa</a> in <strong>Safari</strong>, tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>. It works offline after the first visit and uses copy-and-paste mode.</p>
+        </article>
+      </div>
+
+      <h3 class="dl-group">No install</h3>
+      <div class="card">
+        <p>Use MoDooDa right in your browser on any computer or phone. You copy each prompt into ChatGPT or Claude and paste the reply back.</p>
+        <a class="btn primary" href="app/">Open MoDooDa in your browser</a>
+      </div>
+
+      <div class="notice small">
+        <p><strong>Updates:</strong> the apps don't update themselves yet. To update, download the latest version from this page and install it over the old one.</p>
+        <p><strong>Your accounts:</strong> MoDooDa uses your own ChatGPT and Claude accounts. Downloads contain no accounts, passwords or keys.</p>
       </div>
     </section>
 

@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0-beta",
+  "releaseDate": "",
+  "releaseNotesUrl": "",
+  "platforms": {
+    "mac": { "status": "coming-soon", "url": "", "fileName": "", "sizeMB": null, "sha256": "" },
+    "windows": { "status": "coming-soon", "url": "", "fileName": "", "sizeMB": null, "sha256": "" },
+    "android": { "status": "coming-soon", "url": "", "fileName": "", "sizeMB": null, "sha256": "" },
+    "ios": { "status": "coming-soon", "url": "" }
+  }
+}

@@ -248,7 +248,7 @@ footer.site { padding: 24px 0 40px; color: var(--muted); font-size: 0.875rem; }
 
 fieldset { border: 0; padding: 0; margin: 0 0 16px; min-width: 0; }
 legend { font-weight: 600; padding: 0; margin: 0 0 6px; }
-#current-step, #result, #agent { scroll-margin-top: 72px; }
+#current-step, #result, #agent, #downloads { scroll-margin-top: 72px; }
 
 /* ---------------- MoDooDa agent character ---------------- */
 .agent { display: flex; align-items: center; gap: 14px; margin: 16px 0; }
@@ -349,3 +349,15 @@ legend { font-weight: 600; padding: 0; margin: 0 0 6px; }
 .hero-mascot { width: 180px; max-width: 45vw; justify-self: center; animation: om-breathe 3.2s ease-in-out infinite; filter: drop-shadow(0 10px 16px rgb(80 50 160 / 0.18)); }
 @media (min-width: 760px) { .hero-grid { grid-template-columns: 1fr 240px; } .hero-mascot { width: 230px; } }
 @media (prefers-reduced-motion: reduce) { .hero-mascot { animation: none; } }
+
+/* Downloads */
+.dl-group { margin-top: 24px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.dl-grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media (min-width: 700px) { .dl-grid { grid-template-columns: 1fr 1fr; } }
+.dl-card { margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.dl-card h4 { margin: 0 0 4px; font-size: 1.1rem; }
+.dl-req { margin: 0 0 6px; padding-left: 20px; color: var(--muted); }
+.dl-action { margin: 6px 0; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.dl-meta { font-size: 0.8rem; color: var(--muted); overflow-wrap: anywhere; }
+.topbar .btn.small { min-height: 36px; padding: 4px 12px; font-size: 0.9rem; }
+@media (max-width: 480px) { .topbar .btn.small:not(.primary) { display: none; } }
