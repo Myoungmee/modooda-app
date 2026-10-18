@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self'; manifest-src 'self'; worker-src 'self' blob:; base-uri 'self'; form-action 'none'; object-src 'none'">
   <meta name="referrer" content="no-referrer">
   <title>MoDooDa Agent</title>
-  <meta name="description" content="Two AI participants collaborate on your task and produce one improved answer. Manual mode runs entirely in your browser.">
+  <meta name="description" content="Claude and ChatGPT work on your task together and give you one better answer.">
   <meta name="theme-color" content="#6a48d4">
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="icon" href="../icons/favicon-32.png" sizes="32x32" type="image/png">
@@ -21,21 +21,32 @@
 <body>
   <header class="topbar">
     <div class="wrap">
-      <a class="brand" href="./" aria-label="MoDooDa Agent home"><img src="../icons/icon-192.png" alt="" width="30" height="30">MoDooDa Agent</a>
-      <span class="chip" id="build-label">Browser · manual mode</span>
+      <a class="brand" href="./" aria-label="MoDooDa Agent home"><img src="../icons/icon-192.png" alt="" width="32" height="32"><span>MoDooDa <span class="agent-word">Agent</span></span></a>
       <span class="spacer"></span>
-      <button class="ghost small" id="btn-help" type="button" aria-haspopup="dialog">Help</button>
-      <button class="ghost small" id="btn-settings" type="button" aria-haspopup="dialog">Advanced</button>
+      <div class="row" id="signins" aria-label="Accounts"></div>
+      <button class="ghost icon" id="btn-settings" type="button" aria-haspopup="dialog" aria-label="Settings" title="Settings">⚙︎</button>
     </div>
   </header>
-  <main class="wrap" id="main" tabindex="-1">
+  <main class="wrap app-main" id="main" tabindex="-1">
     <noscript><div class="card">MoDooDa needs JavaScript to run. Nothing you type is sent anywhere by this app.</div></noscript>
   </main>
-  <footer class="site wrap">
-    © 2026 Myoungmee Babu. All rights reserved. The MoDooDa name, character and software may not be copied or reused without permission.<br>
-    MoDooDa <span id="version"></span> · Runs in your browser. No account, no tracking, nothing uploaded by this app.
-    Claude and ChatGPT are named only to identify the services you use; MoDooDa is not affiliated with or endorsed by Anthropic or OpenAI.
-  </footer>
+  <div class="composer-wrap">
+    <div class="wrap">
+      <form class="composer" id="composer" autocomplete="off">
+        <div class="attach-list" id="attach-list"></div>
+        <label for="composer-input" class="sr-only">Message</label>
+        <textarea id="composer-input" rows="1" placeholder="Describe your task…"></textarea>
+        <div class="bar">
+          <button type="button" class="ghost icon" id="btn-attach" aria-label="Attach files" title="Attach files (PDF, Word, text)">📎</button>
+          <input type="file" id="file-input" class="sr-only" multiple aria-label="Attach files">
+          <span class="spacer"></span>
+          <span class="small muted" id="composer-hint"></span>
+          <button type="submit" class="primary send" id="btn-send" aria-label="Send">➤</button>
+        </div>
+      </form>
+      <div class="composer-meta" id="composer-meta"></div>
+    </div>
+  </div>
   <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
 </body>
 </html>
