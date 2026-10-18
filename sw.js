@@ -1,6 +1,6 @@
 // MoDooDa service worker: offline support for the app's own files only.
 // It never caches task text, prompts or replies (those never leave the page).
-const VERSION = '0.3.0-beta-111d38c1bc';
+const VERSION = '0.3.1-beta-ff082b1f3c';
 const CACHE = `modooda-${VERSION}`;
 const PRECACHE = [
   "./",

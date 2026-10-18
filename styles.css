@@ -244,17 +244,17 @@ dialog .dlg-foot { padding: 12px 20px; border-top: 1px solid var(--border); disp
 
 /* idle: breathe + lean toward the pointer + curious moves */
 .agent[data-state="idle"] .m-body { transform: translate(var(--lean-x, 0), var(--lean-y, 0)) rotate(var(--lean-r, 0)); }
-.agent[data-state="idle"] .m-img { animation: m-breathe 3.4s ease-in-out infinite; }
-.agent[data-move="look-left"] .m-img { animation: m-look-left 1.3s ease-in-out; }
-.agent[data-move="look-right"] .m-img { animation: m-look-right 1.3s ease-in-out; }
-.agent[data-move="hop"] .m-img { animation: m-hop 0.9s ease-in-out; }
-.agent[data-move="peek"] .m-img { animation: m-peek 1.3s ease-in-out; }
-.agent[data-move="tilt"] .m-img { animation: m-tilt 1.3s ease-in-out; }
-.agent[data-move="wiggle"] .m-img { animation: m-wiggle 0.9s ease-in-out; }
+.agent[data-state="idle"] .m-figure { animation: m-breathe 3.4s ease-in-out infinite; }
+.agent[data-state][data-move="look-left"] .m-figure { animation: m-look-left 1.3s ease-in-out; }
+.agent[data-state][data-move="look-right"] .m-figure { animation: m-look-right 1.3s ease-in-out; }
+.agent[data-state][data-move="hop"] .m-figure { animation: m-hop 0.9s ease-in-out; }
+.agent[data-state][data-move="peek"] .m-figure { animation: m-peek 1.3s ease-in-out; }
+.agent[data-state][data-move="tilt"] .m-figure { animation: m-tilt 1.3s ease-in-out; }
+.agent[data-state][data-move="wiggle"] .m-figure { animation: m-wiggle 0.9s ease-in-out; }
 
 /* working: small laptop slides in, paws tap, code lines type out */
 .agent[data-state="working"] .m-body { left: 2px; }
-.agent[data-state="working"] .m-img { animation: m-type 0.36s ease-in-out infinite alternate; }
+.agent[data-state="working"] .m-figure { animation: m-type 0.36s ease-in-out infinite alternate; }
 .agent[data-state="working"] .m-laptop,
 .agent[data-state="waiting"] .m-laptop,
 .agent[data-state="asking"] .m-laptop { opacity: 1; transform: none; }
@@ -269,19 +269,19 @@ dialog .dlg-foot { padding: 12px 20px; border-top: 1px solid var(--border); disp
 
 /* waiting: turns to you and waves */
 .agent[data-state="waiting"] .m-body { left: 0; }
-.agent[data-state="waiting"] .m-img { animation: m-wave 1.8s ease-in-out infinite; }
+.agent[data-state="waiting"] .m-figure { animation: m-wave 1.8s ease-in-out infinite; }
 .agent[data-state="waiting"] .m-cursor { animation: m-blink 1s steps(1) infinite; }
 
 /* asking: head tilt */
 .agent[data-state="asking"] .m-body { left: 0; }
-.agent[data-state="asking"] .m-img { animation: m-ask 2.6s ease-in-out infinite; }
+.agent[data-state="asking"] .m-figure { animation: m-ask 2.6s ease-in-out infinite; }
 
 /* done: laptop closes, happy hops, sparkles */
-.agent[data-state="done"] .m-img { animation: m-hop 1.3s ease-in-out infinite; }
+.agent[data-state="done"] .m-figure { animation: m-hop 1.3s ease-in-out infinite; }
 .agent[data-state="done"] .m-spark { animation: m-spark 1.3s ease-in-out infinite; }
 .agent[data-state="done"] .m-spark.s2 { animation-delay: 0.35s; }
 .agent[data-state="done"] .m-spark.s3 { animation-delay: 0.7s; }
-.agent[data-state="partial"] .m-img { animation: m-breathe 3.4s ease-in-out infinite; }
+.agent[data-state="partial"] .m-figure { animation: m-breathe 3.4s ease-in-out infinite; }
 
 @keyframes m-breathe { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(1.025, 0.975); } }
 @keyframes m-look-left { 0%, 100% { transform: none; } 30%, 70% { transform: translateX(-7px) rotate(-7deg); } }
@@ -297,7 +297,7 @@ dialog .dlg-foot { padding: 12px 20px; border-top: 1px solid var(--border); disp
 @keyframes m-wave { 0%, 100% { transform: rotate(0); } 15% { transform: rotate(-8deg); } 30% { transform: rotate(6deg); } 45% { transform: rotate(-6deg); } 60% { transform: rotate(0); } }
 @keyframes m-ask { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-8deg) translateX(3px); } }
 @keyframes m-spark { 0% { opacity: 0; transform: scale(0.3) rotate(0); } 40% { opacity: 1; transform: scale(1) rotate(45deg); } 100% { opacity: 0; transform: scale(0.4) rotate(90deg); } }
-@media (prefers-reduced-motion: reduce) { .agent *, .agent, .hero-mascot { animation: none !important; transition: none !important; } }
+@media (prefers-reduced-motion: reduce) { .hero-mascot { animation: none !important; } }
 @media (max-width: 480px) {
   .m-stage { width: 120px; height: 116px; }
   .m-body { width: 88px; left: 12px; bottom: 12px; }
@@ -351,9 +351,25 @@ body.app:not(.has-run) .send { width: auto; padding: 0 24px; border-radius: 999p
 .stage-slot .agent { margin: 4px 0 0; }
 
 /* floating mascot */
-.m-stage { animation: m-float 4.2s ease-in-out infinite; }
-@keyframes m-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
-.agent[data-state="working"] .m-stage { animation: none; }
+/* lively (default): floats, sways, blinks, looks around; calm: gentle float and blinks; off: still */
+.m-figure { position: relative; transform-origin: 50% 95%; }
+.m-stage { animation: m-float 3.2s ease-in-out infinite; }
+@keyframes m-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-11px); } }
+.agent[data-state="working"] .m-stage { animation: m-float 1.6s ease-in-out infinite; }
+.agent[data-state="idle"] .m-figure { animation: m-sway 3.6s ease-in-out infinite; }
+@keyframes m-sway { 0%, 100% { transform: rotate(-4deg) scale(1, 1); } 25% { transform: rotate(0) scale(1.03, 0.97); } 50% { transform: rotate(4deg) scale(1, 1); } 75% { transform: rotate(0) scale(0.98, 1.02); } }
+.m-shadow { animation: m-shadow 3.2s ease-in-out infinite; }
+@keyframes m-shadow { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(0.8); opacity: 0.6; } }
+.m-lid { position: absolute; width: 5.4%; height: 5.6%; border-radius: 50%; background: linear-gradient(#d9cbfa, #e3cff1); transform: scaleY(0); transform-origin: 50% 0; transition: transform 0.07s ease-in; pointer-events: none; }
+.m-lid::after { content: ""; position: absolute; left: 8%; right: 8%; bottom: 28%; height: max(1.5px, 12%); border-radius: 0 0 50% 50% / 0 0 100% 100%; background: #4a3a63; }
+.m-lid.left { left: 29.5%; top: 43.6%; }
+.m-lid.right { left: 58.3%; top: 41.3%; }
+.agent.blink .m-lid { transform: scaleY(1); }
+.agent[data-motion="calm"] .m-stage { animation: m-float-calm 4.6s ease-in-out infinite; }
+@keyframes m-float-calm { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+.agent[data-motion="calm"] .m-figure, .agent[data-motion="calm"] .m-shadow { animation: none; }
+.agent[data-motion="calm"][data-state="working"] .m-figure { animation: m-type 0.6s ease-in-out infinite alternate; }
+.agent[data-motion="off"] *, .agent[data-motion="off"] { animation: none !important; transition: none !important; }
 body.app .m-stage { width: 128px; height: 118px; }
 body.app .m-body { width: 92px; left: 12px; bottom: 12px; }
 body.app .m-laptop { width: 50px; height: 34px; }
@@ -413,7 +429,7 @@ input[type="url"] { width: 100%; font: inherit; color: var(--text); background: 
 .dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-2); animation: dot 1.1s ease-in-out infinite; }
 .dots i:nth-child(2) { animation-delay: 0.18s; } .dots i:nth-child(3) { animation-delay: 0.36s; }
 @keyframes dot { 0%, 80%, 100% { opacity: 0.25; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-3px); } }
-@media (prefers-reduced-motion: reduce) { .dots i, .m-stage { animation: none !important; } }
+@media (prefers-reduced-motion: reduce) { .dots i { animation: none !important; } }
 @media (max-width: 560px) {
   .ai-row { flex-wrap: wrap; row-gap: 6px; }
   .ai-row .x { order: 3; }
