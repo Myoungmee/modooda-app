@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>MoDooDa Agent</title>
+  <meta name="description" content="Let AI agents collaborate. ChatGPT, Claude and other AIs talk to each other and respond with the best option. Free to use in your browser.">
+  <meta name="theme-color" content="#6a48d4">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="MoDooDa">
+  <link rel="stylesheet" href="styles.css">
+  <script src="landing.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="icons/icon-192.png" alt="" width="30" height="30">MoDooDa Agent</a>
+      <span class="spacer"></span>
+      <a class="btn small" href="#downloads">Downloads</a>
+      <a class="btn primary small" href="app/">Open MoDooDa</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero hero-grid">
+      <div>
+      <h1>MoDooDa Agent: let agents collaborate.</h1>
+      <p class="lead">Pick your AIs — ChatGPT, Claude, and any others — and type your task. They each answer, talk it through by reviewing each other, and come back with the best option, with disagreements shown instead of hidden.</p>
+      <div class="row">
+        <a class="btn primary" href="app/">Open MoDooDa in your browser</a>
+        <a class="btn" href="#downloads">Downloads</a>
+      </div>
+      <p class="small muted">Free. No account. Nothing you type is uploaded by MoDooDa.</p>
+      </div>
+      <img class="hero-mascot" src="icons/mascot.webp" alt="The MoDooDa character, a friendly lavender blob with a bow, waving" width="230" height="227">
+    </section>
+
+    <section class="card" id="phone-first" hidden>
+      <h2>Install MoDooDa on this phone</h2>
+      <p id="phone-steps"></p>
+      <a class="btn primary" href="app/">Open MoDooDa</a>
+    </section>
+
+    <section class="card" aria-labelledby="how-h">
+      <h2 id="how-h">How it works</h2>
+      <ol class="steps-flow">
+        <li><div><strong>Rubric.</strong> One participant proposes what a good answer looks like. You can edit it.</div></li>
+        <li><div><strong>Independent drafts.</strong> Each AI answers without seeing the others’ work.</div></li>
+        <li><div><strong>Cross-review.</strong> Each points out concrete errors, gaps and unsupported claims in the other answers.</div></li>
+        <li><div><strong>Revision.</strong> Each improves its own draft, accepting only feedback that holds up.</div></li>
+        <li><div><strong>One answer.</strong> The drafts are combined, checked by another AI, and delivered with any open disagreements and things to verify.</div></li>
+      </ol>
+      <p class="small muted">Prefer something shorter? The Quick workflow does drafts, one review each, and the combined answer.</p>
+    </section>
+
+    <section id="downloads" aria-labelledby="dl-h">
+      <h2 id="dl-h">Downloads</h2>
+      <p class="muted" id="dl-version">No release has been published yet.</p>
+
+      <h3 class="dl-group">Desktop apps <span class="badge info">Native installer</span></h3>
+      <p class="small muted">A program you download and install on your computer. Connect your own ChatGPT and Claude plans, and MoDooDa runs them automatically (a free local model through Ollama works too), with a chat for notes and follow-up requests and file attachments (PDF, Word, text).</p>
+      <div class="dl-grid">
+        <article class="card dl-card" data-dl="macArm" aria-labelledby="dl-macarm-h">
+          <h4 id="dl-macarm-h">Mac with Apple chip</h4>
+          <p class="small">For Macs with <strong>Apple M1, M2, M3, M4</strong> or newer.</p>
+          <ul class="small dl-req">
+            <li>macOS 13 Ventura or later</li>
+            <li>4 GB RAM; under 50 MB of disk space</li>
+            <li>Optional, for automatic steps: a Claude plan (Pro or higher) and/or a ChatGPT plan (Plus or higher). “Connect to my plan” sets everything up in one click.</li>
+          </ul>
+          <div class="dl-action"><span class="badge warn">Coming soon</span></div>
+          <details class="small"><summary>How to install</summary>
+            <ol class="howto">
+              <li>Open the downloaded <code>.dmg</code> file and drag <strong>MoDooDa Agent</strong> into <strong>Applications</strong>.</li>
+              <li>The first time only: <strong>right-click (or Control-click) the app → Open → Open</strong>. On macOS 15 or later, try to open it once, then go to <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>.</li>
+              <li>This beta is not yet signed by Apple, which is why that one-time step is needed. It only allows this app. Never turn off Mac security in general.</li>
+            </ol>
+          </details>
+        </article>
+        <article class="card dl-card" data-dl="macIntel" aria-labelledby="dl-macintel-h">
+          <h4 id="dl-macintel-h">Mac with Intel chip</h4>
+          <p class="small">For Macs with an <strong>Intel</strong> processor (Core i5, i7…).</p>
+          <ul class="small dl-req">
+            <li>macOS 13 Ventura or later</li>
+            <li>4 GB RAM; under 50 MB of disk space</li>
+            <li>Optional, for automatic steps: a Claude plan (Pro or higher) and/or a ChatGPT plan (Plus or higher). “Connect to my plan” sets everything up in one click.</li>
+          </ul>
+          <div class="dl-action"><span class="badge warn">Coming soon</span></div>
+          <details class="small"><summary>How to install</summary>
+            <ol class="howto">
+              <li>Open the downloaded <code>.dmg</code> file and drag <strong>MoDooDa Agent</strong> into <strong>Applications</strong>.</li>
+              <li>The first time only: <strong>right-click (or Control-click) the app → Open → Open</strong>. On macOS 15 or later, try to open it once, then go to <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>.</li>
+              <li>This beta is not yet signed by Apple, which is why that one-time step is needed. It only allows this app. Never turn off Mac security in general.</li>
+            </ol>
+          </details>
+        </article>
+        <article class="card dl-card" data-dl="windows" aria-labelledby="dl-win-h">
+          <h4 id="dl-win-h">Windows</h4>
+          <p class="small">For 64-bit PCs (x64).</p>
+          <ul class="small dl-req">
+            <li>Windows 10 (version 1809 or later) or Windows 11</li>
+            <li>4 GB RAM; internet the first time (to add Microsoft's WebView2 if it's missing)</li>
+            <li>Optional, for automatic steps: a Claude plan (Pro or higher) and/or a ChatGPT plan (Plus or higher). MoDooDa guides you through a one-time setup of the official connectors.</li>
+          </ul>
+          <div class="dl-action"><span class="badge warn">Coming soon</span></div>
+          <details class="small"><summary>How to install</summary>
+            <ol class="howto">
+              <li>Run the downloaded <code>setup.exe</code> and follow the steps.</li>
+              <li>If Windows shows “Windows protected your PC”, click <strong>More info → Run anyway</strong>. This beta is not yet code-signed. Never turn off Windows security in general.</li>
+            </ol>
+          </details>
+        </article>
+        <article class="card dl-card" data-dl="linux" aria-labelledby="dl-linux-h">
+          <h4 id="dl-linux-h">Linux</h4>
+          <p class="small">For 64-bit PCs (x86_64).</p>
+          <ul class="small dl-req">
+            <li>Ubuntu 22.04 or later, or a similar recent distribution</li>
+            <li>Optional, for automatic steps: a Claude plan (Pro or higher) and/or a ChatGPT plan (Plus or higher).</li>
+          </ul>
+          <div class="dl-action"><span class="badge warn">Coming soon</span></div>
+          <details class="small"><summary>How to install</summary>
+            <ol class="howto">
+              <li>Make the downloaded <code>.AppImage</code> file executable (right-click → Properties → Allow executing as a program), then double-click it.</li>
+            </ol>
+          </details>
+        </article>
+      </div>
+      <p class="small muted"><strong>Which Mac do I have?</strong> Apple menu → About This Mac. “Chip: Apple M1/M2/M3/M4…” means Apple chip; “Processor: … Intel” means Intel chip.</p>
+
+      <h3 class="dl-group">Phones</h3>
+      <div class="dl-grid">
+        <article class="card dl-card" data-dl="android" aria-labelledby="dl-and-h">
+          <h4 id="dl-and-h">Android</h4>
+          <p class="small"><strong>Native app:</strong></p>
+          <div class="dl-action"><span class="badge warn">Coming soon</span></div>
+          <p class="small"><strong>Use now: the web app</strong> <span class="badge info">Installable website</span><br>Open <a href="app/">MoDooDa</a> in Chrome, tap <strong>⋮</strong>, then <strong>Install app</strong> or <strong>Add to Home screen</strong>. It works offline after the first visit and uses copy-and-paste mode.</p>
+        </article>
+        <article class="card dl-card" data-dl="ios" aria-labelledby="dl-ios-h">
+          <h4 id="dl-ios-h">iPhone and iPad</h4>
+          <p class="small"><strong>Native app:</strong></p>
+          <div class="dl-action"><span class="badge warn">Coming soon</span></div>
+          <p class="small"><strong>Use now: the web app</strong> <span class="badge info">Installable website</span><br>Open <a href="app/">MoDooDa</a> in <strong>Safari</strong>, tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>. It works offline after the first visit and uses copy-and-paste mode.</p>
+        </article>
+      </div>
+
+      <h3 class="dl-group">No install</h3>
+      <div class="card">
+        <p>Use MoDooDa right in your browser on any computer or phone. You copy each prompt into ChatGPT or Claude and paste the reply back.</p>
+        <a class="btn primary" href="app/">Open MoDooDa in your browser</a>
+      </div>
+
+      <div class="notice small">
+        <p><strong>Updates:</strong> the apps don't update themselves yet. To update, download the latest version from this page and install it over the old one.</p>
+        <p><strong>Your accounts:</strong> MoDooDa uses your own ChatGPT and Claude accounts. Downloads contain no accounts, passwords or keys.</p>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="need-h">
+      <h2 id="need-h">What you need</h2>
+      <ul>
+        <li>An account with each AI you pick (for example ChatGPT and Claude). Free accounts work by copy and paste, within each service’s usage limits.</li>
+        <li>Only one of them? You can still use MoDooDa. Mark the other participant “can’t continue” and you’ll get a clearly labeled single-participant result, though without cross-review.</li>
+        <li>No API keys, no payment to MoDooDa.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="priv-h">
+      <h2 id="priv-h">Privacy</h2>
+      <ul>
+        <li>MoDooDa runs in your browser. It has no account system, no analytics and no server that receives your tasks.</li>
+        <li>Nothing is saved unless you choose “Save progress” or turn on auto-save.</li>
+        <li>When you paste text into ChatGPT or Claude, that company receives it under its own privacy policy. Private or incognito browsing doesn’t change that.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="lim-h">
+      <h2 id="lim-h">Honest limits</h2>
+      <ul>
+        <li>Two models agreeing is not proof. MoDooDa lists claims that need checking. Verify important facts yourself.</li>
+        <li>Collaboration usually catches more mistakes, but it won’t beat a single model every time.</li>
+        <li>Manual mode means copying and pasting: about 10 steps for the Full workflow, 5 for Quick.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site wrap">
+    © 2026 Myoungmee Babu. All rights reserved. The MoDooDa name, character and software may not be copied or reused without permission.<br>
+    MoDooDa is an independent project and is not affiliated with or endorsed by Anthropic, OpenAI or any other AI provider. AI services are named only to identify the services you use.
+  </footer>
+</body>
+</html>

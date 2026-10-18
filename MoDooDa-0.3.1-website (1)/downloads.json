@@ -1,0 +1,13 @@
+{
+  "version": "0.3.1-beta",
+  "releaseDate": "",
+  "releaseNotesUrl": "",
+  "platforms": {
+    "windows": { "status": "coming-soon", "url": "", "fileName": "", "sizeMB": null, "sha256": "" },
+    "macArm": { "status": "coming-soon", "url": "", "fileName": "", "sizeMB": null, "sha256": "" },
+    "macIntel": { "status": "coming-soon", "url": "", "fileName": "", "sizeMB": null, "sha256": "" },
+    "linux": { "status": "coming-soon", "url": "", "fileName": "", "sizeMB": null, "sha256": "" },
+    "android": { "status": "coming-soon", "url": "", "fileName": "", "sizeMB": null, "sha256": "" },
+    "ios": { "status": "coming-soon", "url": "" }
+  }
+}

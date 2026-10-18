@@ -438,3 +438,31 @@ input[type="url"] { width: 100%; font: inherit; color: var(--text); background: 
   .choice button { padding: 4px 12px; }
   .app-hero { padding-top: 12px; }
 }
+
+/* ---------- Google Sites widget (embed/) ---------- */
+body.embed { background: transparent; min-height: 100vh; display: flex; flex-direction: column; }
+.embed-main { max-width: 760px; width: 100%; margin: 0 auto; padding: 8px 16px 4px; text-align: center; }
+.embed-stage { display: flex; justify-content: center; }
+.embed-stage .agent { margin: 0; justify-content: center; }
+.embed-stage .m-bubble { flex: 0 1 auto; max-width: 300px; text-align: left; }
+.embed-title { font-size: clamp(1.5rem, 5vw, 2.1rem); margin: 4px 0 4px; background: linear-gradient(90deg, var(--accent), #c56a35); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.embed-lead { color: var(--muted); margin: 0 0 12px; }
+.embed-open { margin-bottom: 4px; }
+.embed-h2 { font-size: 1rem; margin: 18px 0 10px; }
+.embed-grid { display: grid; gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 640px) { .embed-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.dl-btn { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 14px 10px 12px; border-radius: 18px; border: 1px solid var(--border); background: var(--surface); color: var(--text); text-decoration: none; box-shadow: var(--shadow); transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s; }
+.dl-btn svg { width: 30px; height: 30px; color: var(--accent); margin-bottom: 4px; }
+.dl-btn .dl-name { font-weight: 750; line-height: 1.25; }
+.dl-btn .dl-sub { font-size: 0.75rem; color: var(--muted); line-height: 1.3; }
+.dl-btn .dl-sub { margin-bottom: 8px; }
+.dl-btn .dl-state { margin-top: auto; font-size: 0.8rem; font-weight: 700; padding: 3px 12px; border-radius: 999px; background: var(--warn-soft); color: var(--warn); }
+a.dl-btn .dl-state { background: var(--accent); color: var(--accent-text); }
+a.dl-btn:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); box-shadow: 0 10px 26px rgb(80 50 160 / 0.16); }
+.dl-btn[aria-disabled="true"] { opacity: 0.85; }
+.dl-btn.mine { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent), var(--shadow); }
+.dl-btn.mine::before { content: "Your computer"; position: absolute; top: -9px; left: 50%; transform: translateX(-50%); font-size: 0.68rem; font-weight: 700; background: var(--accent); color: var(--accent-text); padding: 1px 8px; border-radius: 999px; white-space: nowrap; }
+.embed-tip { margin: 12px auto 0; max-width: 520px; text-align: left; }
+.embed-tip summary { text-align: center; color: var(--accent); font-weight: 600; }
+.embed-note { margin: 10px 0 0; }
+.embed-foot { margin-top: auto; padding: 8px 16px 10px; font-size: 0.78rem; color: var(--muted); }

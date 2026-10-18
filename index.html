@@ -65,13 +65,30 @@
       <h3 class="dl-group">Desktop apps <span class="badge info">Native installer</span></h3>
       <p class="small muted">A program you download and install on your computer. Connect your own ChatGPT and Claude plans, and MoDooDa runs them automatically (a free local model through Ollama works too), with a chat for notes and follow-up requests and file attachments (PDF, Word, text).</p>
       <div class="dl-grid">
-        <article class="card dl-card" data-dl="mac" aria-labelledby="dl-mac-h">
-          <h4 id="dl-mac-h">Mac</h4>
-          <p class="small">One app for <strong>Intel and Apple silicon (M1–M4)</strong> Macs.</p>
+        <article class="card dl-card" data-dl="macArm" aria-labelledby="dl-macarm-h">
+          <h4 id="dl-macarm-h">Mac with Apple chip</h4>
+          <p class="small">For Macs with <strong>Apple M1, M2, M3, M4</strong> or newer.</p>
           <ul class="small dl-req">
             <li>macOS 13 Ventura or later</li>
             <li>4 GB RAM; under 50 MB of disk space</li>
-            <li>Optional, for automatic steps: a Claude plan (Pro or higher) and/or a ChatGPT plan (Plus or higher). MoDooDa guides you through a one-time setup of the official connectors.</li>
+            <li>Optional, for automatic steps: a Claude plan (Pro or higher) and/or a ChatGPT plan (Plus or higher). “Connect to my plan” sets everything up in one click.</li>
+          </ul>
+          <div class="dl-action"><span class="badge warn">Coming soon</span></div>
+          <details class="small"><summary>How to install</summary>
+            <ol class="howto">
+              <li>Open the downloaded <code>.dmg</code> file and drag <strong>MoDooDa Agent</strong> into <strong>Applications</strong>.</li>
+              <li>The first time only: <strong>right-click (or Control-click) the app → Open → Open</strong>. On macOS 15 or later, try to open it once, then go to <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>.</li>
+              <li>This beta is not yet signed by Apple, which is why that one-time step is needed. It only allows this app. Never turn off Mac security in general.</li>
+            </ol>
+          </details>
+        </article>
+        <article class="card dl-card" data-dl="macIntel" aria-labelledby="dl-macintel-h">
+          <h4 id="dl-macintel-h">Mac with Intel chip</h4>
+          <p class="small">For Macs with an <strong>Intel</strong> processor (Core i5, i7…).</p>
+          <ul class="small dl-req">
+            <li>macOS 13 Ventura or later</li>
+            <li>4 GB RAM; under 50 MB of disk space</li>
+            <li>Optional, for automatic steps: a Claude plan (Pro or higher) and/or a ChatGPT plan (Plus or higher). “Connect to my plan” sets everything up in one click.</li>
           </ul>
           <div class="dl-action"><span class="badge warn">Coming soon</span></div>
           <details class="small"><summary>How to install</summary>
@@ -98,7 +115,22 @@
             </ol>
           </details>
         </article>
+        <article class="card dl-card" data-dl="linux" aria-labelledby="dl-linux-h">
+          <h4 id="dl-linux-h">Linux</h4>
+          <p class="small">For 64-bit PCs (x86_64).</p>
+          <ul class="small dl-req">
+            <li>Ubuntu 22.04 or later, or a similar recent distribution</li>
+            <li>Optional, for automatic steps: a Claude plan (Pro or higher) and/or a ChatGPT plan (Plus or higher).</li>
+          </ul>
+          <div class="dl-action"><span class="badge warn">Coming soon</span></div>
+          <details class="small"><summary>How to install</summary>
+            <ol class="howto">
+              <li>Make the downloaded <code>.AppImage</code> file executable (right-click → Properties → Allow executing as a program), then double-click it.</li>
+            </ol>
+          </details>
+        </article>
       </div>
+      <p class="small muted"><strong>Which Mac do I have?</strong> Apple menu → About This Mac. “Chip: Apple M1/M2/M3/M4…” means Apple chip; “Processor: … Intel” means Intel chip.</p>
 
       <h3 class="dl-group">Phones</h3>
       <div class="dl-grid">
