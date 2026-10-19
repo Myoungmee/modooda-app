@@ -466,3 +466,8 @@ a.dl-btn:hover { transform: translateY(-2px); border-color: color-mix(in srgb, v
 .embed-tip summary { text-align: center; color: var(--accent); font-weight: 600; }
 .embed-note { margin: 10px 0 0; }
 .embed-foot { margin-top: auto; padding: 8px 16px 10px; font-size: 0.78rem; color: var(--muted); }
+
+/* While a copy-and-paste step waits, the reply box is the only box. */
+body.app.by-hand .composer { display: none; }
+.app-hero .web-note { margin-top: 8px; font-size: 0.88rem; }
+#preflight .row { margin: 10px 0; }
