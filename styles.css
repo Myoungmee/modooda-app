@@ -471,3 +471,21 @@ a.dl-btn:hover { transform: translateY(-2px); border-color: color-mix(in srgb, v
 body.app.by-hand .composer { display: none; }
 .app-hero .web-note { margin-top: 8px; font-size: 0.88rem; }
 #preflight .row { margin: 10px 0; }
+
+/* compact copy-and-paste step: three buttons, no big box */
+.hand-steps { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 6px; }
+.hand-steps .num { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: rgb(255 255 255 / 0.25); font-size: 0.75rem; margin-right: 2px; }
+.hand-steps .btn:not(.primary) .num { background: var(--accent-soft); color: var(--accent); }
+.hand-what { margin: 4px 0 0; }
+.by-hand-box textarea { min-height: 90px; margin-top: 6px; }
+.disabled-like { opacity: 0.6; cursor: default; }
+
+/* what to make, and who makes it */
+.composer-meta .make-row { display: flex; flex-wrap: wrap; gap: 6px; width: 100%; }
+.mini-select { width: auto; max-width: 100%; font-size: 0.82rem; padding: 4px 28px 4px 10px; border-radius: 999px; background-color: var(--surface); }
+.msg-sys { display: flex; align-items: center; gap: 8px; justify-content: center; font-size: 0.85rem; color: var(--muted); }
+.msg-sys span.icon { width: 22px; height: 22px; font-size: 0.7rem; }
+.product { border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border)); background: var(--accent-soft); border-radius: var(--radius-sm); padding: 12px 14px; margin: 10px 0 14px; }
+.product .row { align-items: center; }
+.product-outline { margin: 8px 0 10px; padding-left: 22px; columns: 2 220px; }
+.product details { margin-top: 8px; }
