@@ -489,3 +489,10 @@ body.app.by-hand .composer { display: none; }
 .product .row { align-items: center; }
 .product-outline { margin: 8px 0 10px; padding-left: 22px; columns: 2 220px; }
 .product details { margin-top: 8px; }
+
+/* drag and drop files anywhere */
+.drop-hint { position: fixed; inset: 0; z-index: 60; display: none; place-items: center; background: color-mix(in srgb, var(--accent) 14%, transparent); border: 3px dashed var(--accent); pointer-events: none; }
+.drop-hint > div { display: flex; flex-direction: column; align-items: center; gap: 4px; background: var(--surface); color: var(--text); padding: 18px 28px; border-radius: 18px; font-weight: 700; font-size: 1.1rem; box-shadow: var(--shadow); }
+body.dragging .drop-hint { display: grid; }
+.product-file { padding: 6px 0; border-top: 1px solid color-mix(in srgb, var(--accent) 20%, transparent); }
+.product-file:first-of-type { border-top: 0; }
